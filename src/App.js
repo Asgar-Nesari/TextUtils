@@ -5,15 +5,11 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react';
-// import { Route,Router,Routes } from 'react-router-dom';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-
-
 
 function App() {
   const [mode,setmode]=useState('light');
@@ -29,67 +25,74 @@ function App() {
     }, 1500);
   }
 
+  const removebodyclasses=()=>{
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-dark')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-warning')
+  }
 
-  const togglemode=()=>{
+  const togglemode=(cls)=>{
+    removebodyclasses();
+    document.body.classList.add('bg-'+cls);
     if(mode==='light'){
       setmode('dark'); 
       document.body.style.backgroundColor="#042743";
       showAlert("Dark mode has enabled",'success');
-      document.title='React- Dark Mode';
+      
     }
     else{
       setmode('light');
       document.body.style.backgroundColor="white";
       showAlert('Light mode has enabled','success');
-      document.title='React- Light Mode';
+      
     }
   }
 
-  const togglemodegreen=()=>{
-    if(mode==='light'){
-      setmode('green'); 
-      document.body.style.backgroundColor="green";
-      showAlert("Green mode has enabled",'success');
-      document.title='React- Green Mode';
-    }
-    else{
-      setmode('light');
-      document.body.style.backgroundColor="white";
-      showAlert('Light mode has enabled','success');
-      document.title='React- Light Mode';
+  // const togglemodegreen=()=>{
+  //   if(mode==='light'){
+  //     setmode('gray'); 
+  //     document.body.style.backgroundColor="gray";
+  //     showAlert("Gray mode has enabled",'success');
+      
+  //   }
+  //   else{
+  //     setmode('light');
+  //     document.body.style.backgroundColor="white";
+  //     showAlert('Light mode has enabled','success');
   
-    }
-  }
+  //   }
+  // }
 
-  const togglemodepink=()=>{
-    if(mode==='light'){
-      setmode('pink'); 
-      document.body.style.backgroundColor="pink";
-      showAlert("Pink mode has enabled",'success');
-      document.title='React- Pink Mode';
-    }
-    else{
-      setmode('light');
-      document.body.style.backgroundColor="white";
-      showAlert('Light mode has enabled','success');
-      document.title='React- Light Mode';
+  // const togglemodepink=()=>{
+  //   if(mode==='light'){
+  //     setmode('pink'); 
+  //     document.body.style.backgroundColor="pink";
+  //     showAlert("Pink mode has enabled",'success');
+      
+  //   }
+  //   else{
+  //     setmode('light');
+  //     document.body.style.backgroundColor="white";
+  //     showAlert('Light mode has enabled','success');
   
-    }
-  }
+  //   }
+  // }
   return (
     <>
     <Router>
-    <Navbar title="Textutils" aboutText="About" mode={mode} togglemode={togglemode} togglemodegreen={togglemodegreen} togglemodepink={togglemodepink}/>
+    <Navbar title="Textutils" aboutText="About" mode={mode} togglemode={togglemode} />
     <Alert alert={alert}/>
     
     <div className="container my-3">
     <Switch>
           <Route exact path="/about">
-            <About />
-          </Route>
+            <About mode={mode}/>
+          </Route> 
           <Route exact path="/">
-           <TextForm showAlert={showAlert} heading="Enter the text to Analyze Beloaw" mode={mode}/>
-          </Route>
+           <TextForm showAlert={showAlert} heading="Try TextUtils - Word counter , Character counter , Copy Text" mode={mode}/>
+           </Route>
     </Switch>
     </div>
     </Router>
