@@ -30,20 +30,6 @@ export default function Navbar(props) { // rfc
         <div className="bg-dark rounded mx-2" onClick={()=>{props.togglemode('dark')}} style={{height:'30px', width:'30px', cursor:'pointer'}}></div>
       </div>
 
-    {/* <div className={`form-check form-switch text-${props.mode==='light'?'black':'light'}` }>
-                  <input className="form-check-input" onClick={props.togglemodepink} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Pink Mode</label>
-       </div>&nbsp;&nbsp;
-
-      <div className={`form-check form-switch text-${props.mode==='light'?'black':'light'}` }>
-              <input className="form-check-input" onClick={props.togglemodegreen} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Gray Mode</label>
-     </div>&nbsp;&nbsp;
-            
-     <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}` }>
-        <input className="form-check-input" onClick={()=>{props.togglemode(null)}} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexSwitchCheckDefault"> Dark Mode</label>
-      </div>   */}
 
     </div>
   </div>
