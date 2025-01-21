@@ -49,36 +49,6 @@ function App() {
       
     }
   }
-
-  // const togglemodegreen=()=>{
-  //   if(mode==='light'){
-  //     setmode('gray'); 
-  //     document.body.style.backgroundColor="gray";
-  //     showAlert("Gray mode has enabled",'success');
-      
-  //   }
-  //   else{
-  //     setmode('light');
-  //     document.body.style.backgroundColor="white";
-  //     showAlert('Light mode has enabled','success');
-  
-  //   }
-  // }
-
-  // const togglemodepink=()=>{
-  //   if(mode==='light'){
-  //     setmode('pink'); 
-  //     document.body.style.backgroundColor="pink";
-  //     showAlert("Pink mode has enabled",'success');
-      
-  //   }
-  //   else{
-  //     setmode('light');
-  //     document.body.style.backgroundColor="white";
-  //     showAlert('Light mode has enabled','success');
-  
-  //   }
-  // }
   return (
     <>
     <Router>
